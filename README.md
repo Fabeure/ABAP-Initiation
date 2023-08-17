@@ -251,7 +251,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   A selection screen is a screen where the user can input parametres that will be used in the rest of the program.
 
-```abap
+  ```abap
   DATA :   s_idsal TYPE ZEXOSALARIES-ID_SAL
            it_salaries TYPE TABLE OF ZEXOSALARIES,
            wa_salaries TYPE ZEXOSALARIES.
