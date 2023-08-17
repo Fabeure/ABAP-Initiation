@@ -65,6 +65,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
     - https://github.com/SAP-samples/abap-cheat-sheets/blob/main/02_Structures.md
 
 
+
   At this point, our program wont give us any results since we havent set our selection parametre S_IDSAL yet.
 
   to do this, lets use a selection screen
@@ -96,6 +97,9 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   ![Selection-Screen](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Screen.png?raw=true)
 
+   input no parametres will select all entries in the database table.
+
+
   ![Selection-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Result.png?raw=true)
 
   
@@ -110,6 +114,44 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
   When using the selection screen again, this is now the result
 
   ![Text-Symbol-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Text_Symbol_Result.png?raw=true)
+
+
+  lets modify our code to add a few more selection parameters:
+
+  ```ABAP
+   DATA : s_idsal TYPE ZEXOSALARIES-ID_SAL,
+          s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
+          s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
+          s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
+          it_salaries TYPE TABLE OF ZEXOSALARIES,
+          wa_salaries TYPE ZEXOSALARIES.
+
+  SELECT-OPTIONS :
+     s_id for s_idsal,
+     s_nom for s_nomsal NO INTERVALS,
+     s_prenom for s_prenomsal NO INTERVALS,
+     s_dat for s_datnaissancesal.
+
+
+  Select *
+  from ZEXOSALARIES
+  into table it_salaries
+  where ID_SAL IN S_ID
+  AND NOM_SALARIES IN S_NOM
+  AND PRENOM_SALARIES IN S_PRENOM
+  AND DATE_DE_NAISSANCE IN S_DAT.
+
+  
+
+  LOOP AT it_salaries into wa_salaries.
+    WRITE wa_salaries-ID_SAL.
+    WRITE wa_salaries-NOM_SALARIES.
+    WRITE /. "breakline to make result more readable
+  ENDLOOP.
+ 
+
+  ```
+  ![Selection-Screen-Updated](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection-Screen-Updated.png?raw=true)
 
 
   </details>
