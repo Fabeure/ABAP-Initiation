@@ -5,7 +5,7 @@
 
 3. [**Exercices**](#exercices)
 
-   - [**Exercise 1.1 – Program Creation**](#exercice-11--hello-world)
+   - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1.md)
      - Context
      - Problem
      - Solution
