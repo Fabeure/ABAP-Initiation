@@ -3,25 +3,25 @@
 1. [**Introduction**](#introduction)
 2. [**Pre-requesites**](#pre-requesites)
 
-3. **Exercises**
+3. [**Exercises**](#exercises)
 
-   - **Exercise 1.1 – Program Creation**
-
+   - [**Exercise 1.1 – Program Creation**](#exercice-11--hello-world)
      - Context
+     - Problem
      - Solution
+     
 
    - **Exercise 1.2 – Selection Screen**
 
-     - Objectives
-     - Development Standards
-     - Useful Information
-     - Results
+     - Context
+     - Problem
+     - Solution
 
    - **Exercise 1.3 - Messages**
 
-     - Objectives
-     - Useful Information
-     - Results
+     - Context
+     - Problem
+     - Solution
 
    - **Exercise 2 – For all entries**
 
@@ -119,7 +119,11 @@ You'll first need access to an SAP system via the ABAP GUI, which will be provid
 
 This guide will only assume you have an understanding of basic programming concepts such as loops, conditionals, basic SQL, and object oriented programming (OO).
 
-### Exercice 1 : Hello World
+
+## Exercices
+
+
+### Exercice 1.1 : Hello World
 
 - Context \
   In this exercice you will learn how to create a new program in the ABAP GUI, you will understand what a transaction is, and you will get familiarised with the work-flow of writing and executing ABAP code.
@@ -128,7 +132,7 @@ This guide will only assume you have an understanding of basic programming conce
 
 - Solution :
 <details>
-  <summary>Solution</summary>
+  <summary>Clickt to show solution</summary>
 After getting access to an SAP system and opening the SAP GUI, you should be presented with this screen after logging in:
 
 ![SAP GUI Home Screen](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Home_Screen.png?raw=true)
@@ -174,5 +178,68 @@ Try writing this simple 'Hello World' program and execute it
 WRITE 'Hello World'.
 ```
 
+
+</details>
+
+
+### Exercice 1.2 : Data retrieval and selection screens
+
+- Context \
+in this exercice, we will learn how to retrieve data from a database, allow the user to input selection criteria, and show the results in the standard output.
+ 
+- Problem  
+
+Using the **ZEXOSALARIES** database table, allow the user to select employees using a range of IDs.
+
+- Hints:
+  <details>
+  <summary> show hints </summary>
+
+  - Use the transaction SE11 to find out the structure of the ZEXOSALARIES table and its corresponding fields
+
+  - Use the transaction SE16n to view the contents of the ZEXOSALARIES table
+
+  - Declare the necessary data fields to fetch the rows of the ZEXOSALARIES table
+
+  - Use SELECTION-SCREEN to allow the user to input search parametres
+  </details>
+  
+
+- Solution :
+<details>
+  <summary>Click to show Solution</summary>
+
+The first step is to understand the structure of the ZEXOSALARIES table. We can use the SE11 transaction to achieve this.
+
+![Structure](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Structure.png?raw=true)
+
+As you can see, the ZEXOSALARIES table is comprised of multiple fields each of which has its own data type. 
+
+We can now declare the correponding data types that will allows us to fetch the data from the database table into our program and write the result to the standard output.
+```abap
+"use a DATA clause to declare data.
+DATA : s_idsal TYPE ZEXOSALARIES-ID_SAL
+       it_salaries TYPE TABLE OF ZEXOSALARIES,
+       wa_salaries TYPE ZEXOSALARIES.
+
+
+
+" we can select all entries from the ZEXOSALARIES table using the selection parametre S_IDSAL into our internal table it_salaries
+Select *
+from ZEXOSALARIES
+into table it_salaries
+where ID_SAL in S_IDSAL.
+
+
+
+" now we can loop over our internal table row by row and write the output to the standard output.
+LOOP AT it_salaries into wa_salaries.
+  WRITE wa_salaries-ID_SAL.
+  WRITE wa_salaries-NOM_SALARIES
+
+```
+Internal tables are basically an image of your database table that exist only in runtime (when executing your program). These internal tables are used to fetch data from the database into your program. 
+
+Working areas are like the "rows" of the internal table. 
 
 </details>
