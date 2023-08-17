@@ -17,14 +17,18 @@
         </details>
         
 - Solution
+    <details>
+    <summary> Click to show solution </summary>
+    
+    ##### Step 1: Creating the custom screen 
 
-##### Step 1: Creating the custom screen 
+    ##### Step 2: Designing a custom container
 
-##### Step 2: Designing a custom container
+    ##### Step 3: linking our custom screen and container to our source code
 
-##### Step 3: linking our custom screen and container to our source code
+    ##### Step 4: Preparing our data for display
 
-##### Step 4: Preparing our data for display
+    ##### Step 5: Displaying the data 
 
-##### Step 5: Displaying the data 
+    </details>
 
