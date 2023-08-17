@@ -79,7 +79,7 @@
   ENDLOOP.
   ```
 
-  ![Societe-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Societe-Result.png)
+  ![Societe-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Societe_Result.png?raw=true)
 
 
   </details>
