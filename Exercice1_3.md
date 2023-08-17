@@ -13,7 +13,7 @@
     
     First we add our text symbol to the text elements
     
-    ![No-Data]()
+    ![No-Data](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/No_Data.png)
 
 
     now lets modify our code to account for the case where the selection process returns no results:
