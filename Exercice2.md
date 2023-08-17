@@ -81,7 +81,7 @@
 
   ![Societe-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Societe_Result.png?raw=true)
 
-    ```diff
-     - Be careful when using FOR ALL ENTRIES in an empty internal table, as this will cause the system to select all entries in every database table which could cause a system crash or a memory overflow.
-    ```
+    🔴🔴🔴🔴🔴
+     Be careful when using FOR ALL ENTRIES in an empty internal table, as this will cause the system to select all entries in every database table which could cause a system crash or a memory overflow.
+   🔴🔴🔴🔴🔴
   </details>
