@@ -121,9 +121,9 @@ This guide will only assume you have an understanding of basic programming conce
 
 ### Exercice 1 : Hello World
 
-- Context
+- Context \
   In this exercice you will learn how to create a new program in the ABAP GUI, you will understand what a transaction is, and you will get familiarised with the work-flow of writing and executing ABAP code.
-- Problem
+- Problem \
   Acces the SAP code editor and make a 'Hello World' program.
 - Solution :
 
