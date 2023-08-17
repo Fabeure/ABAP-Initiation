@@ -5,13 +5,13 @@
 
 3. [**Exercices**](#exercices)
 
-   - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1.md)
+   - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1_1.md)
      - Context
      - Problem
      - Solution
      
 
-   - **Exercise 1.2 – Selection Screen**
+   - [**Exercise 1.2 – Selection Screen**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1_2.md)
 
      - Context
      - Problem
