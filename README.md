@@ -130,3 +130,17 @@ This guide will only assume you have an understanding of basic programming conce
 After getting access to an SAP system and opening the SAP GUI, you should be presented with this screen after logging in:
 
 ![SAP GUI Home Screen](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Home_Screen.png?raw=true)
+
+
+You can now access the ABAP code editor through the transaction SE38
+
+Transactions are just executable programs that are included in the SAP ABAP GUI. We will be using different transactions for different purposes.
+
+you should now be able to create or modify programs.
+
+![SE38 program creation]()
+
+Let's create a new program and name it *Z*MM_INITIATION
+
+**NOTE**: The Z prefix in sap standards means that this program is a custom user made program, and not a standard ABAP program.\
+The MM is an abreviation for SAP modules.
