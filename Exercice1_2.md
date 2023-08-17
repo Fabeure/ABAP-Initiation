@@ -60,6 +60,10 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   Working areas are like the "rows" of the internal table. 
 
+  For more information on Data declarations, refer to:
+    - https://github.com/SAP-samples/abap-cheat-sheets/blob/main/01_Internal_Tables.md
+    - https://github.com/SAP-samples/abap-cheat-sheets/blob/main/02_Structures.md
+
 
   At this point, our program wont give us any results since we havent set our selection parametre S_IDSAL yet.
 
