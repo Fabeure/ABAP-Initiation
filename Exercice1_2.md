@@ -151,7 +151,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
  
 
   ```
-  ![Selection-Screen-Updated](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection-Screen-Updated.png?raw=true)
+  ![Selection-Screen-Updated](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Screen_Updated.png?raw=true)
 
 
   </details>
