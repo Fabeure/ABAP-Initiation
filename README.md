@@ -6,6 +6,7 @@
 3. [**Exercices**](#exercices)
 
    - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1_1.md)
+   
      - Context
      - Problem
      - Solution
@@ -30,16 +31,15 @@
      - Solution
 
    - [**Exercise 3 – Code Organization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice3.md)
+     - Context
+     - Problem
+     - Solution
 
+   - [**Exercise 4 – Display Optimization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.md)
 
-     - Objectives
-
-   - **Exercise 4 – Display Optimization**
-
-     - Objectives
-     - Useful Information
-     - Results
-     - Additional Notes
+     - Context
+     - Problem
+     - Solution
 
    - **Exercise 5 - Data Edition**
 

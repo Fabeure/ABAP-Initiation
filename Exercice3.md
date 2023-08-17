@@ -36,7 +36,7 @@ Create different include files to store significant chunks of code.
   a form is the equivalent of functions in traditional programming.
 
   ```abap
-    *&---------------------------------------------------------------------*
+  *&---------------------------------------------------------------------*
   *& Include          ZIMM_DOCUMENTATION_F01
   *&---------------------------------------------------------------------*
 
@@ -63,7 +63,7 @@ Create different include files to store significant chunks of code.
   ENDFORM.
 
 
-    *&---------------------------------------------------------------------*
+  *&---------------------------------------------------------------------*
   *& Form sort_salaries_by
   *&---------------------------------------------------------------------*
   *& sort salaries by criteria, should use USING instead of hard coding
@@ -76,7 +76,7 @@ Create different include files to store significant chunks of code.
     SORT WT_LISTE_SALARIES BY ID_SAL ASCENDING.
   ENDFORM.
 
-    *&---------------------------------------------------------------------*
+  *&---------------------------------------------------------------------*
   *& Form select_societes
   *&---------------------------------------------------------------------*
   *& select BUKRS AND BKTXT using FOR ALL ENTRIES IN to only read relevant data
@@ -99,5 +99,11 @@ Create different include files to store significant chunks of code.
     ENDIF.
   ENDFORM.
   ```
+
+  Forms can access global variables directly, or they can have input and output parameters.
+  
+  For more information on writing forms, refer to: NEED TO FIND USEFUL LINK
+
+  Don't forget to apply text formatting using the Pretty Printer to make your code easier to read.
 
   </details>
