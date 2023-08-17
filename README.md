@@ -17,18 +17,17 @@
      - Problem
      - Solution
 
-   - **Exercise 1.3 - Messages**
+   - [**Exercise 1.3 - Messages**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice1_3.md)
 
      - Context
      - Problem
      - Solution
 
-   - **Exercise 2 – For all entries**
+   - [**Exercise 2 – For all entries**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice2.md)
 
-     - Objectives
-     - Technical Information
-     - Useful Information
-     - Results
+     - Context
+     - Problem
+     - Solution
 
    - **Exercise 3 – Code Organization**
 
