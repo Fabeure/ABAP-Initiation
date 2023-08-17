@@ -129,4 +129,4 @@ This guide will only assume you have an understanding of basic programming conce
 
 After getting access to an SAP system and opening the SAP GUI, you should be presented with this screen after logging in:
 
-![SAP GUI Home Screen]()
+![SAP GUI Home Screen](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Home_Screen.png?raw=true)
