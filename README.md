@@ -29,7 +29,8 @@
      - Problem
      - Solution
 
-   - **Exercise 3 – Code Organization**
+   - [**Exercise 3 – Code Organization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice3.md)
+
 
      - Objectives
 
