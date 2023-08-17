@@ -3,7 +3,7 @@
 1. [**Introduction**](#introduction)
 2. [**Pre-requesites**](#pre-requesites)
 
-3. [**Exercises**](#exercises)
+3. [**Exercices**](#exercices)
 
    - [**Exercise 1.1 – Program Creation**](#exercice-11--hello-world)
      - Context
@@ -279,5 +279,17 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
   ![Selection-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Result.png?raw=true)
 
   
-      
+  Let's now make our selection screen look a little better by changing the display name of our selection variable 
+
+  We can do this by adding a TEXT SYMBOL 
+
+  ![Goto](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Goto.png?raw=true)
+
+  ![Text-Symbol](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Text_Symbol.png?raw=true)
+
+  When using the selection screen again, this is now the result
+
+  ![Text-Symbol-Result](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Text_Symbol_Result.png?raw=true)
+
+
   </details>
