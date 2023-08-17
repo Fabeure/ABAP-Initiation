@@ -1,4 +1,5 @@
-### Exercice 1.2 : Data retrieval and selection screens
+
+### Exercice 1.2: Data retrieval and selection screens
 
 - Context \
 in this exercice, we will learn how to retrieve data from a database, allow the user to input selection criteria, and show the results in the standard output.
