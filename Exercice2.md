@@ -27,10 +27,10 @@
           s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
           s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
           s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
-          it_salaries TYPE TABLE OF ZEXOSALARIES,
+          WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
           wa_salaries TYPE ZEXOSALARIES.
 
-  DATA : it_societe TYPE TABLE OF T001,
+  DATA : WT_SOCIETES TYPE TABLE OF T001,
          wa_societe TYPE T001.
 
   SELECT-OPTIONS :
@@ -42,7 +42,7 @@
 
   Select *
   from ZEXOSALARIES
-  into table it_salaries
+  into table WT_LISTE_SALARIES
   where ID_SAL IN S_ID
   AND NOM_SALARIES IN S_NOM
   AND PRENOM_SALARIES IN S_PRENOM
@@ -54,14 +54,14 @@
   ENDIF.
 
 
-  IF it_salaries[] IS NOT INITIAL.
+  IF WT_LISTE_SALARIES[] IS NOT INITIAL.
     SELECT *
       FROM T001
-      INTO TABLE it_societe
-      FOR ALL ENTRIES IN it_salaries
-      WHERE BUKRS = it_salaries-SOCIETE.
+      INTO TABLE WT_SOCIETES
+      FOR ALL ENTRIES IN WT_LISTE_SALARIES
+      WHERE BUKRS = WT_LISTE_SALARIES-SOCIETE.
     IF SY-SUBRC = 0.
-      SORT it_societe BY BUKRS.
+      SORT WT_SOCIETES BY BUKRS.
       "ELSE.
       "MESSAGE TEXT-E02 TYPE 'E'.
     ENDIF.
@@ -69,9 +69,9 @@
 
   
 
-  LOOP AT it_salaries into wa_salaries.
+  LOOP AT WT_LISTE_SALARIES into wa_salaries.
     CLEAR wa_societe.
-    READ  TABLE it_societe INTO wa_societe WITH KEY BUKRS = wa_salaries-SOCIETE.
+    READ  TABLE WT_SOCIETES INTO wa_societe WITH KEY BUKRS = wa_salaries-SOCIETE.
       WRITE wa_salaries-ID_SAL.
       WRITE wa_salaries-NOM_SALARIES.
       WRITE wa_societe-BUTXT.

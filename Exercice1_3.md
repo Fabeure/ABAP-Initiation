@@ -23,7 +23,7 @@
           s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
           s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
           s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
-          it_salaries TYPE TABLE OF ZEXOSALARIES,
+          WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
           wa_salaries TYPE ZEXOSALARIES.
 
   SELECT-OPTIONS :
@@ -35,7 +35,7 @@
 
   Select *
   from ZEXOSALARIES
-  into table it_salaries
+  into table WT_LISTE_SALARIES
   where ID_SAL IN S_ID
   AND NOM_SALARIES IN S_NOM
   AND PRENOM_SALARIES IN S_PRENOM
@@ -48,7 +48,7 @@
 
   
 
-  LOOP AT it_salaries into wa_salaries.
+  LOOP AT WT_LISTE_SALARIES into wa_salaries.
     WRITE wa_salaries-ID_SAL.
     WRITE wa_salaries-NOM_SALARIES.
     WRITE /. "breakline to make result more readable

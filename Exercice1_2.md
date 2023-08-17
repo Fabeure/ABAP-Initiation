@@ -36,21 +36,21 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
   ```abap
   "use a DATA clause to declare data.
   DATA :   s_idsal TYPE ZEXOSALARIES-ID_SAL
-           it_salaries TYPE TABLE OF ZEXOSALARIES,
+           WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
            wa_salaries TYPE ZEXOSALARIES.
 
 
 
-  " we can select all entries from the ZEXOSALARIES table using the selection parametre S_IDSAL into our internal table it_salaries
+  " we can select all entries from the ZEXOSALARIES table using the selection parametre S_IDSAL into our internal table WT_LISTE_SALARIES
   Select *
   from ZEXOSALARIES
-  into table it_salaries
+  into table WT_LISTE_SALARIES
   where ID_SAL in S_IDSAL.
 
 
 
   " now we can loop over our internal table row by row and write the output to the standard output.
-  LOOP AT it_salaries into wa_salaries.
+  LOOP AT WT_LISTE_SALARIES into wa_salaries.
     WRITE wa_salaries-ID_SAL.
     WRITE wa_salaries-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
@@ -75,7 +75,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   ```abap
   DATA :   s_idsal TYPE ZEXOSALARIES-ID_SAL
-           it_salaries TYPE TABLE OF ZEXOSALARIES,
+           WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
            wa_salaries TYPE ZEXOSALARIES.
 
   SELECT-OPTIONS :
@@ -83,12 +83,12 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   Select *
   from ZEXOSALARIES
-  into table it_salaries
+  into table WT_LISTE_SALARIES
   where ID_SAL in S_IDSAL.
 
   
 
-  LOOP AT it_salaries into wa_salaries.
+  LOOP AT WT_LISTE_SALARIES into wa_salaries.
     WRITE wa_salaries-ID_SAL.
     WRITE wa_salaries-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
@@ -124,7 +124,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
           s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
           s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
           s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
-          it_salaries TYPE TABLE OF ZEXOSALARIES,
+          WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
           wa_salaries TYPE ZEXOSALARIES.
 
   SELECT-OPTIONS :
@@ -136,7 +136,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   Select *
   from ZEXOSALARIES
-  into table it_salaries
+  into table WT_LISTE_SALARIES
   where ID_SAL IN S_ID
   AND NOM_SALARIES IN S_NOM
   AND PRENOM_SALARIES IN S_PRENOM
@@ -144,7 +144,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   
 
-  LOOP AT it_salaries into wa_salaries.
+  LOOP AT WT_LISTE_SALARIES into wa_salaries.
     WRITE wa_salaries-ID_SAL.
     WRITE wa_salaries-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
