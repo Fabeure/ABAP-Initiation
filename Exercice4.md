@@ -245,7 +245,7 @@ Now that we have selected our entires based on different criteria, it's time to 
                   I_STRUCTURE_NAME       = 'ZEXOSALARIES'
             *     I_CLIENT_NEVER_DISPLAY = 'X'
             *     I_BYPASSING_BUFFER     =
-                  I_INTERNAL_TABNAME     = 'wt_salaries'
+                  I_INTERNAL_TABNAME     = 'it_salaries'
             CHANGING
                   CT_FIELDCAT            = GT_FCAT1
             EXCEPTIONS
@@ -276,7 +276,7 @@ Now that we have selected our entires based on different criteria, it's time to 
             *     IT_EXCEPT_QINFO               =
             *     IR_SALV_ADAPTER               =
             CHANGING
-                  IT_OUTTAB                     = wt_salaries
+                  IT_OUTTAB                     = it_salaries
                   IT_FIELDCATALOG               = GT_FCAT1
             *     IT_SORT                       =
             *     IT_FILTER                     =
@@ -299,6 +299,8 @@ Now that we have selected our entires based on different criteria, it's time to 
 
     Then we use the SET_TABLE_FOR_FIRST_DISPLAY method of our grid instance to display our screen.
 
-    Running our program gives us this display now
+    Running our program gives us this display now (Don't forget to call the DISPLAY_DATA form in the PBO module)
+
+    ![Display](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Display.png?raw=true)
     </details>
 
