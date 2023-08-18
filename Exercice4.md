@@ -143,7 +143,10 @@ Now that we have selected our entires based on different criteria, it's time to 
       INCLUDE zmm_documentation_saber_usei01.
     ```
 
-    By default the GUI status contains many usefull buttons, 
+    We now have an empty screen. 
+
+    ![Screen_Empty](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Screen_Empty.png?raw=true)
+
 
 
     ##### Step 2: Designing a custom container
