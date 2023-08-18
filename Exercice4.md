@@ -40,6 +40,8 @@
             B[PROCESS BEFORE OUTPUT]-->C[WAIT FOR USER INTERACTION];
             C[WAIT FOR USER INTERACTION]-->D[PROCESS AFTER INPUT];
             D -- Program return to PROCESS BEFORE OUTPUT every time -->B;
+
+            D -- If the user want to leave the screen --> E[EXIT SCREEN];
     ```
 
     ##### Step 2: Designing a custom container
