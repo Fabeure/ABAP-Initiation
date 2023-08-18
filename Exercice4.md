@@ -1,13 +1,14 @@
 ### Exercice 4 : Display Optimization
 
-- Context 
 
-      Now that we have selected our entires based on different criteria, it's time to make our display optimized.
-- Problem
+- Context \
+Now that we have selected our entires based on different criteria, it's time to make our display optimized.
+ 
+- Problem  
 
-      Create an ALV report to diisplay data fetched from the previous exercices. 
+ Create an ALV report to diisplay data fetched from the previous exercices. 
 
-    - Hints 
+   - Hints 
         <details>
         <summary> Click to show hints </summary>
 
@@ -17,6 +18,7 @@
         
         * find a way to display your data in an ALV report after calling the screen you made.
         </details>
+
         
 - Solution
     <details>
