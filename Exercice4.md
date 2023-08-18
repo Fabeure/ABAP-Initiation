@@ -55,17 +55,59 @@ Now that we have selected our entires based on different criteria, it's time to 
 
     Back to our source code, lets un-comment our PROCESS BEFORE OUTPUT and PROCESS AFTER INPUT modules.
 
-    ![Screen_Number](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Uncomment.png?raw=true)
+    ![Uncomment](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Uncomment.png?raw=true)
 
     Double on each module and create it (you will be prompted to create a new object for each module).
 
     Your project structure should look something like this now: 
 
-    ![Screen_Number](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Modules.png?raw=true)
+    ![Modules](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Modules.png?raw=true)
 
     Let's first take a look at our STATUS module (This is the module that will be executed every time you do an action once the screen is called)
 
-    
+    ![status](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/status.png?raw=true)  
+
+    Let's uncomment the status and and title bar and create both object by **double clicking on their names**
+
+    Your project structure should look like this now
+
+    ![Status_Uncommented](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Status_Uncommented.png?raw=true)
+
+
+    The title bar is the title that will be show on top of your screen after you call it, and it doesnt affect the contents of the screen.
+
+    The GUI status represents the buttons and shortcuts the user will be able to see and use after calling the screen. 
+    We can now call our screen from our main and take a look at it
+
+     ```abap
+      DATA : s_idsal TYPE ZEXOSALARIES-ID_SAL,
+            s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
+            s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
+            s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
+            it_salaries TYPE TABLE OF ZEXOSALARIES,
+            wa_salaries TYPE ZEXOSALARIES.
+
+      DATA : it_societe TYPE TABLE OF T001,
+            wa_societe TYPE T001.
+
+      SELECT-OPTIONS :
+                  s_id for s_idsal,
+                  s_nom for s_nomsal NO INTERVALS,
+                  s_prenom for s_prenomsal NO INTERVALS,
+                  s_dat for s_datnaissancesal.
+
+
+      PERFORM SELECT_SALARIES.
+      PERFORM SORT_SALARIES.
+      PERFORM SELECT_SOCIETES.
+      PERFORM WRITE_SALARIES.
+
+      CALL SCREEN 001.
+
+      INCLUDE ZIMM_DOCUMENTATION_F01.
+      ```
+    By default the GUI status contains many usefull buttons, 
+
 
     ##### Step 2: Designing a custom container
 
