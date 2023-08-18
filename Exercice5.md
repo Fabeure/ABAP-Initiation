@@ -49,7 +49,7 @@
     ```
 
     Now that our edits are propagated to the internal table, we can add a 'Save' button to our screen that will persist the changes to the database table.
-    (adding the button has already been covered, refer to [Exercice4](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice5.md))
+    (adding the button has already been covered, refer to [Exercice 4](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.md))
 
 
   </details>
