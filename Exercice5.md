@@ -34,4 +34,22 @@
     We can now edit the Name fields of our alv report
 
     ![Editable](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Editable.png?raw=true)
+
+
+    So far, only the display value of the field we are editing changes. Neither the internal table nor the database table are being changed.
+
+    Let's first make the changes propagate to the internal table by calling the 
+    **REGISTER_EDIT_EVENT** of our grid instance inside of our DISPLAY_DATA form.
+
+    ```abap
+        " register edit events on grid to propagate to internal table
+    CALL METHOD GRID001->REGISTER_EDIT_EVENT
+     EXPORTING
+      I_EVENT_ID = CL_GUI_ALV_GRID=>MC_EVT_MODIFIED.
+    ```
+
+    Now that our edits are propagated to the internal table, we can add a 'Save' button to our screen that will persist the changes to the database table.
+    (adding the button has already been covered, refer to [Exercice4](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice5.md))
+
+
   </details>
