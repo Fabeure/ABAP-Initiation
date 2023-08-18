@@ -32,16 +32,13 @@
 
     Now that our screen has been created, we need to code it's **flow logic**.
 
-    The flow logic of the screen is simply how the screen will operate. We can visualize it using this flow chart:
+    The flow logic of the screen is simply how the screen will operate. We can visualize it using this flow chart
 
 
-      ```mermaid
-            graph TD;
-             A-->B;
-             A-->C;
-             B-->D;
-             C-->D;
-      ```
+```mermaid	
+graph TD;
+      A-->B;
+```
 
 
     ##### Step 2: Designing a custom container
