@@ -77,6 +77,20 @@ Now that we have selected our entires based on different criteria, it's time to 
     The title bar is the title that will be show on top of your screen after you call it, and it doesnt affect the contents of the screen.
 
     The GUI status represents the buttons and shortcuts the user will be able to see and use after calling the screen. 
+
+
+    Let's setup a few usefull keys so the user can navigate in and out of the screen.
+
+    First add the keys in the Function Keys tab of the GUI STATUS 
+
+    ![Keys](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Keys.png?raw=true)
+
+    Now let's move over to the **USER COMMANDS** module. This is where we will code the logic of our keys
+
+    ![Commands](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Commands.png?raw=true)
+
+
+
     We can now call our screen from our main and take a look at it
 
     ``` abap
@@ -105,6 +119,8 @@ Now that we have selected our entires based on different criteria, it's time to 
       CALL SCREEN 001.
 
       INCLUDE ZIMM_DOCUMENTATION_F01.
+      INCLUDE zmm_documentation_saber_stao01.
+      INCLUDE zmm_documentation_saber_usei01.
     ```
 
     By default the GUI status contains many usefull buttons, 
