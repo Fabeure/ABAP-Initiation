@@ -39,7 +39,7 @@
             A[Call Screen 001]-->B[PROCESS BEFORE OUTPUT];
             B[PROCESS BEFORE OUTPUT]-->C[WAIT FOR USER INTERACTION];
             C[WAIT FOR USER INTERACTION]-->D[PROCESS AFTER INPUT];
-            D -->E;
+            D -->E[EXIT SCREEN];
             D -- Program return to PROCESS BEFORE OUTPUT every time -->B;
             
     ```
