@@ -34,10 +34,13 @@
 
     The flow logic of the screen is simply how the screen will operate. We can visualize it using this flow chart:
 
-    ```mermaid
-    FLOWCHART TD
-      A[Deploy to production] --> B(Is It Friday?);
-    ```
+      ```mermaid
+      graph TD;
+          A-->B;
+          A-->C;
+          B-->D;
+          C-->D;
+      ```
 
 
     ##### Step 2: Designing a custom container
