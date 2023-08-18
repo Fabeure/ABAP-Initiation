@@ -48,6 +48,25 @@ Now that we have selected our entires based on different criteria, it's time to 
             
     ```
 
+    In summary, when you first call your screen, the PROCESS BEFORE OUTPUT code will be executed.
+    Then, the screen will wait for user input. 
+    After the user input comes in, the PROCESS AFTER INPUT code will be executed and then the screen loops back to the PROCESS BEFORE OUTPUT code. 
+    This will keep happening until the user decides to exit the screen.
+
+    Back to our source code, lets un-comment our PROCESS BEFORE OUTPUT and PROCESS AFTER INPUT modules.
+
+    ![Screen_Number](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Uncomment.png?raw=true)
+
+    Double on each module and create it (you will be prompted to create a new object for each module).
+
+    Your project structure should look something like this now: 
+
+    ![Screen_Number](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Modules.png?raw=true)
+
+    Let's first take a look at our STATUS module (This is the module that will be executed every time you do an action once the screen is called)
+
+    
+
     ##### Step 2: Designing a custom container
 
     ##### Step 3: linking our custom screen and container to our source code
