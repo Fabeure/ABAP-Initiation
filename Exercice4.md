@@ -34,12 +34,13 @@
 
     The flow logic of the screen is simply how the screen will operate. We can visualize it using this flow chart:
 
+
       ```mermaid
-      graph TD;
-          A-->B;
-          A-->C;
-          B-->D;
-          C-->D;
+            graph TD;
+             A-->B;
+             A-->C;
+             B-->D;
+             C-->D;
       ```
 
 
