@@ -6,7 +6,7 @@ In this exercice, we will organize our code into meaningful parts and seperate t
  
 - Problem  
 
-Create different include files to store significant chunks of code.
+Create different include files to store significant chunks of your code.
 
   
 
@@ -155,5 +155,9 @@ Create different include files to store significant chunks of code.
 
     INCLUDE ZIMM_DOCUMENTATION_F01.
   ```
+  our structure is now more organized and easier to maintain.
+
+
+  ![Include](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Maintain.png?raw=true)
 
   </details>

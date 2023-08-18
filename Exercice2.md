@@ -10,7 +10,9 @@
   - Hints:
     <details>
       <summary> Click to show hints </summary>
+
       * take a look at the structure and contents of the T001 table.
+      
       * use the FOR ALL ENTIRES clause to minimise the cost of the search
     </details> 
 

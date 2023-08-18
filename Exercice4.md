@@ -22,6 +22,24 @@
     
     ##### Step 1: Creating the custom screen 
 
+    Let's start off by creating our new screen that will hold the ALV report. It can be created in a similar way we created our Include files: through the repository browser.
+
+    ![Screen_Create](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Screen_Create.png?raw=true)
+
+    Give your screen a unique number. This number will be used to access the screen in your source code.
+
+    ![Screen_Number](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Screen_Number.png?raw=true)
+
+    Now that our screen has been created, we need to code it's **flow logic**.
+
+    The flow logic of the screen is simply how the screen will operate. We can visualize it using this flow chart:
+
+    ```mermaid
+    FLOWCHART TD
+      A[Deploy to production] --> B(Is It Friday?);
+    ```
+
+
     ##### Step 2: Designing a custom container
 
     ##### Step 3: linking our custom screen and container to our source code
