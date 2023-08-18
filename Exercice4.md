@@ -151,11 +151,154 @@ Now that we have selected our entires based on different criteria, it's time to 
 
     ##### Step 2: Designing a custom container
 
+    Now that we have our empty screen ready to be used, lets design a custom container that will "hold" the data that we will display.
+
+    we can do this by clicking on the layout editor in our screen source file.
+
+    ![Layout](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Layout.png?raw=true)
+
+
+    You should now be in the layout editor that looks like this
+
+    ![Editor](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Editor.png?raw=true)
+
+    Lets drag and drop a new custom container on our screen and give it a name
+
+    ![Container](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Container.png?raw=true)
+
+    Make sure you fit it correctly to the size of your screen.
+
+
     ##### Step 3: linking our custom screen and container to our source code
+
+    Now that we have created our screen, and designed the container that will hold our data, its time link both to our source code. 
+
+    Let's declare a few class instances that we will need 
+    ```abap
+      DATA : CONTAINER001 TYPE REF TO CL_GUI_CUSTOM_CONTAINER,
+             GRID001      TYPE REF TO CL_GUI_ALV_GRID.
+    ```  
+    Let's now link our container and grid using the classes **cl_gui_custom_container** and **cl_gui_alv_grid**
+
+    We can do this in the PBO module to keep our code organized
+
+    ```abap
+      *----------------------------------------------------------------------*
+      ***INCLUDE ZMM_DOCUMENTATION_SABER_STAO01.
+      *----------------------------------------------------------------------*
+      *&---------------------------------------------------------------------*
+      *& Module STATUS_0001 OUTPUT
+      *&---------------------------------------------------------------------*
+      *&
+      *&---------------------------------------------------------------------*
+      MODULE STATUS_0001 OUTPUT.
+      SET PF-STATUS 'STATUS001'.
+      SET TITLEBAR 'SCREEN001'.
+
+      IF CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
+       CREATE OBJECT CONTAINER001
+       EXPORTING
+       CONTAINER_NAME = 'CONTAINER001'.
+
+       CREATE OBJECT GRID001
+       EXPORTING
+       I_PARENT = CONTAINER001.
+       ENDIF.
+
+      ENDMODULE.
+    ```  
 
     ##### Step 4: Preparing our data for display
 
-    ##### Step 5: Displaying the data 
+    Let's now make a form that will handle preparing and displaying our data 
 
+    ```
+      *&---------------------------------------------------------------------*
+      *& Form display_data
+      *&---------------------------------------------------------------------*
+      *& populate internal tables from ZEXOSALARIES and T001
+      *& display alv usign LVC_FIELDCATALOG_MERGE and GRID0100->SET_TABLE_FOR_FIRST_DISPLAY
+      *& CTRL+F6 to get function template
+      *&---------------------------------------------------------------------*
+      *& -->  p1        text
+      *& <--  p2        text
+      *&---------------------------------------------------------------------*
+      FORM DISPLAY_DATA .
+            DATA : GT_FCAT1   TYPE LVC_T_FCAT,  "table to hold fields
+                  GS_FCAT1   LIKE LINE OF GT_FCAT1,
+                  GS_LAYOUT1 TYPE LVC_S_LAYO. "layout of our report
+
+
+            " initial internal table data population from database tables
+            PERFORM SELECT_SALARIES.
+
+            PERFORM SORT_SALARIES.
+
+            PERFORM SELECT_SOCIETES.
+
+
+
+            " fetch all fields from final internal table and merge them in GT_FCAT1 table
+            CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+            EXPORTING
+            *     I_BUFFER_ACTIVE        =
+                  I_STRUCTURE_NAME       = 'ZEXOSALARIES'
+            *     I_CLIENT_NEVER_DISPLAY = 'X'
+            *     I_BYPASSING_BUFFER     =
+                  I_INTERNAL_TABNAME     = 'wt_salaries'
+            CHANGING
+                  CT_FIELDCAT            = GT_FCAT1
+            EXCEPTIONS
+                  INCONSISTENT_INTERFACE = 1
+                  PROGRAM_ERROR          = 2
+                  OTHERS                 = 3.
+            IF SY-SUBRC <> 0.
+            * Implement suitable error handling here
+            ENDIF.
+
+
+            " display alv report
+            CALL METHOD GRID001->SET_TABLE_FOR_FIRST_DISPLAY
+            EXPORTING
+            *     I_BUFFER_ACTIVE               =
+            *     I_BYPASSING_BUFFER            =
+            *     I_CONSISTENCY_CHECK           =
+            *     I_STRUCTURE_NAME              =
+            *     IS_VARIANT                    =
+                  I_SAVE                        = 'A'
+            *     I_DEFAULT                     = 'X'
+                  IS_LAYOUT                     = GS_LAYOUT1
+            *     IS_PRINT                      =
+            *     IT_SPECIAL_GROUPS             =
+                  IT_TOOLBAR_EXCLUDING          = LT_EXCLUDE_FUNCTIONS
+            *     IT_HYPERLINK                  =
+            *     IT_ALV_GRAPHICS               =
+            *     IT_EXCEPT_QINFO               =
+            *     IR_SALV_ADAPTER               =
+            CHANGING
+                  IT_OUTTAB                     = wt_salaries
+                  IT_FIELDCATALOG               = GT_FCAT1
+            *     IT_SORT                       =
+            *     IT_FILTER                     =
+            EXCEPTIONS
+                  INVALID_PARAMETER_COMBINATION = 1
+                  PROGRAM_ERROR                 = 2
+                  TOO_MANY_LINES                = 3
+                  OTHERS                        = 4.
+            IF SY-SUBRC <> 0.
+            *     Implement suitable error handling here
+            ENDIF.
+
+
+      ENDFORM.	
+    ```
+    **Explanation** : We first start off by declaring a field catalog variable
+    This variable is a table that will contain the fields that we will display on our screen.
+
+    We use the function **LVC_FIELDCATALOG_MERGE** to automatically set all fields in the GT_FCAT1 table.
+
+    Then we use the SET_TABLE_FOR_FIRST_DISPLAY method of our grid instance to display our screen.
+
+    Running our program gives us this display now
     </details>
 
