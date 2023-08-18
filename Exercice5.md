@@ -51,5 +51,32 @@
     Now that our edits are propagated to the internal table, we can add a 'Save' button to our screen that will persist the changes to the database table.
     (adding the button has already been covered, refer to [Exercice 4](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.md))
 
+    Lets now code the logic for our UPDATE form
+
+    ```abap
+        *&---------------------------------------------------------------------*
+        *& Form update
+        *&---------------------------------------------------------------------*
+        *& updates db table after modifiying internal table via alv
+        *& need to hit ENTER before pressing save
+        *&---------------------------------------------------------------------*
+        *& -->  p1        text
+        *& <--  p2        text
+        *&---------------------------------------------------------------------*
+        FORM UPDATE.
+
+        DATA : WA_LISTE_SALARIES_FULL TYPE ZEXOSALARIES.
+        FIELD-SYMBOLS: <FS_DATA> LIKE LINE OF WS_LISTE_SALARIES_FULL.
+
+        LOOP AT WS_LISTE_SALARIES_FULL ASSIGNING <FS_DATA>.
+            MOVE-CORRESPONDING <FS_DATA> TO WA_LISTE_SALARIES_FULL.
+            MODIFY ZEXOSALARIES FROM WA_LISTE_SALARIES_FULL.
+        ENDLOOP.
+
+
+        ENDFORM.
+    ```
+
+    For more information on field-symbols and how to use them, refer to: [ABAP CheatSheet - Dynamic Programming - Field Symbols](https://github.com/SAP-samples/abap-cheat-sheets/blob/main/06_Dynamic_Programming.md#field-symbols)
 
   </details>
