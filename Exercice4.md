@@ -87,7 +87,27 @@ Now that we have selected our entires based on different criteria, it's time to 
 
     Now let's move over to the **USER COMMANDS** module. This is where we will code the logic of our keys
 
-    ![Commands](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Commands.png?raw=true)
+
+    ```abap
+      *----------------------------------------------------------------------*
+      ***INCLUDE ZMM_DOCUMENTATION_SABER_USEI01.
+      *----------------------------------------------------------------------*
+      *&---------------------------------------------------------------------*
+      *&      Module  USER_COMMAND_0001  INPUT
+      *&---------------------------------------------------------------------*
+      *       text
+      *----------------------------------------------------------------------*
+      MODULE USER_COMMAND_0001 INPUT.
+      CASE sy-ucomm. "the SY-UCOMM variable allows us to access which user command has been sent to the system
+      WHEN 'BACK'.
+      LEAVE TO SCREEN 0.
+      WHEN 'LEAVE'.
+      LEAVE PROGRAM.
+      WHEN 'EXIT'.
+      LEAVE PROGRAM.
+      ENDCASE.
+      ENDMODULE.
+    ```	
 
 
 
