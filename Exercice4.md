@@ -36,7 +36,8 @@
 
     ``` mermaid
       graph TD;
-            A-->B;
+            A[Call Screen 001]-->B[PROCESS BEFORE OUTPUT];
+            B[PROCESS BEFORE OUTPUT]-->C[PROCESS AFTER INPUT];
     ```
 
     ##### Step 2: Designing a custom container
