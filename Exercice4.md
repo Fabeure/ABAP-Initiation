@@ -79,8 +79,8 @@ Now that we have selected our entires based on different criteria, it's time to 
     The GUI status represents the buttons and shortcuts the user will be able to see and use after calling the screen. 
     We can now call our screen from our main and take a look at it
 
-     ```abap
-      DATA : s_idsal TYPE ZEXOSALARIES-ID_SAL,
+    ``` abap
+         DATA : s_idsal TYPE ZEXOSALARIES-ID_SAL,
             s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
             s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
             s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
@@ -105,7 +105,8 @@ Now that we have selected our entires based on different criteria, it's time to 
       CALL SCREEN 001.
 
       INCLUDE ZIMM_DOCUMENTATION_F01.
-      ```
+    ```
+
     By default the GUI status contains many usefull buttons, 
 
 
