@@ -41,17 +41,17 @@
      - Problem
      - Solution
 
-   - **Exercise 5 - Data Edition**
+   - [**Exercise 5 - Data Edition**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice5.md)
 
-     - Objectives
-     - ALV
-     - Data Update
-     - Adding / Deleting Employees
+     - Context
+     - Problem
+     - Solution
 
-   - **Exercise 6 - Sending Email**
+   - [**Exercise 6 - Sending An Email**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice6.md)
 
-     - Objectives
-     - Useful Elements
+     - Context
+     - Problem
+     - Solution
 
    - **Exercise 7 - Formatting**
 
@@ -102,6 +102,8 @@
 
 7. **Useful Links**
    - Additional resources or links for further learning and reference.
+
+
 
 ## Introduction
 

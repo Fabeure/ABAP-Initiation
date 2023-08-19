@@ -254,7 +254,7 @@
     *&---------------------------------------------------------------------*
     FORM REFRESH.
 
-      IF NOT sy-ucomm = 'ADD'.
+      IF NOT sy-ucomm = 'ADD'. // This is here to prevent performing a refresh before adding our new entry to the database table.
       PERFORM SELECT_SALARIES.
       PERFORM SELECT_SOCIETES.
       ENDIF.
