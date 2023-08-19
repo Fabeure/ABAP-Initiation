@@ -8,7 +8,10 @@
    - Hints 
      <details>
         <summary> Show Hints </summary>
+
         * Look into the fields available for each row of the GT_FCAT1 table that we created earlier. You can use CTRLK+SPACE to get a list of available fields.
+
+        * Try to code your own versions of the ADD_ROW and DELETE_ROW forms. Make sure they don't allow the user to modify values that they shouldn't be able to, and make sure those values are handled automatically
 
         * 
      </details>
@@ -166,7 +169,16 @@
     ENDMODULE.	
     ```
 
-    Finally, let's code the logic for the ADD and REMOVE forms:
+    Let's add a few data declarations to our main source file that we will re-use throughout the rest of our forms
+    Try understanding what these declarations will be useful for
+
+    ```abap
+      DATA : I_SELECTED_ROWS TYPE LVC_T_ROW,
+        W_SELECTED_ROWS TYPE  LVC_S_ROW,
+        WA              TYPE ZTLISTE_SALARIES_FULL.
+    ```
+
+    Next, let's code the logic for our ADD_ROW and REMOVE_ROW forms:
 
     ```abap
     *&---------------------------------------------------------------------*
@@ -211,21 +223,67 @@
       DATA: WA_SELECTED_ROW TYPE SY-TABIX,
             WA_MODIFIED     TYPE ZEXOSALARIES.
 
-      CALL METHOD GRID0100->GET_SELECTED_ROWS
+      CALL METHOD GRID001->GET_SELECTED_ROWS
         IMPORTING
           ET_INDEX_ROWS = I_SELECTED_ROWS.
 
       LOOP AT I_SELECTED_ROWS INTO WA_SELECTED_ROW.
-        READ TABLE WS_LISTE_SALARIES_FULL INTO WA INDEX WA_SELECTED_ROW.
+        READ TABLE IT_SALARIES INTO WA INDEX WA_SELECTED_ROW.
         MOVE-CORRESPONDING WA TO WA_MODIFIED.
 
       DELETE FROM ZEXOSALARIES WHERE ID_SAL = WA_MODIFIED-ID_SAL.
       ENDLOOP.
 
-
-      "PERFORM REFRESH.
     ENDFORM.
     ```		
 
+
+    Finally, let's add a REFRESH form to our PBO module that will refresh our internal table that is displayed in oru alv report, so we can see our modifications in real time.
+
+
+    ```abap
+    *&---------------------------------------------------------------------*
+    *& Form refresh
+    *&---------------------------------------------------------------------*
+    *& refresh data in internal tables AND database tables
+    *& resource extensive but important for maintaining consistency
+    *& when manipulating entries
+    *&---------------------------------------------------------------------*
+    *& -->  p1        text
+    *& <--  p2        text
+    *&---------------------------------------------------------------------*
+    FORM REFRESH.
+
+      IF NOT sy-ucomm = 'ADD'.
+      PERFORM SELECT_SALARIES.
+      PERFORM SELECT_SOCIETES.
+      ENDIF.
+      CALL METHOD GRID001->REFRESH_TABLE_DISPLAY.
+    ENDFORM.
+    ```
+
+    Our pbo module should look something like this now
+
+    ```abap
+    MODULE STATUS_0001 OUTPUT.
+    SET PF-STATUS 'STATUS001'.
+    SET TITLEBAR 'SCREEN001'.
+
+      IF CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
+      CREATE OBJECT CONTAINER001
+      EXPORTING
+      CONTAINER_NAME = 'CONTAINER001'.
+
+      CREATE OBJECT GRID001
+      EXPORTING
+      I_PARENT = CONTAINER001.
+      PERFORM DISPLAY_DATA.
+      ENDIF.
+
+      PERFORM REFRESH.
+    ENDMODULE.
+    ```
+
+    We can now add new entries, save them, and delete them through our ALV report.
 
   </details>
