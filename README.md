@@ -53,7 +53,7 @@
      - Problem
      - Solution
 
-   - **Exercise 7 - Formatting**
+   - [**Exercise 7 - Formatting**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice7.md)
 
      - Objectives
 
