@@ -5,15 +5,13 @@
   In this exercice you will learn how to add, remove and enable data editing on specific grids of your ALV report, and save these changes to your database table.
 - Problem \
   Implement CRUD functionalities in your ALV grid
-   - Hints 
-     <details>
-        <summary> Show Hints </summary>
+  - Hints 
+    <details>
+    <summary> Show Hints </summary>
 
-        * Look into the fields available for each row of the GT_FCAT1 table that we created earlier. You can use CTRLK+SPACE to get a list of available fields.
+      * Look into the fields available for each row of the GT_FCAT1 table that we created earlier. You can use CTRLK+SPACE to get a list of available fields.
 
-        * Try to code your own versions of the ADD_ROW and DELETE_ROW forms. Make sure they don't allow the user to modify values that they shouldn't be able to, and make sure those values are handled automatically
-
-        * 
+      * Try to code your own versions of the ADD_ROW and DELETE_ROW forms. Make sure they don't allow the user to modify values that they shouldn't be able to, and make sure those values are handled automatically
      </details>
 
 - Solution 
