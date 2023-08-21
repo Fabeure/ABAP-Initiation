@@ -56,9 +56,6 @@ Add a **Hotspot** to the **Company Name** field
   Let's now implement this class in our PBO module
 
   ```abap
-    *----------------------------------
-    * Event Handler Class implimentation
-    *-----------------------------------
     CLASS LCL_EVENT_HANDLER IMPLEMENTATION.
 
     METHOD HANDLE_HOTSPOT_CLICK.
