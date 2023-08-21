@@ -35,13 +35,13 @@
      - Problem
      - Solution
 
-   - [**Exercise 4 – Display Optimization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.md)
+   - [**Exercise 4.1 – Display Optimization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4_1.md)
 
      - Context
      - Problem
      - Solution
 
-   - [**Exercise 4.5 – Displaying More Information**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.5.md)
+   - [**Exercise 4.2 – Displaying More Information**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4_2.md)
 
      - Context
      - Problem
