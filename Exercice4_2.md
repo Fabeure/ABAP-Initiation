@@ -11,8 +11,7 @@
 
        * Create a new structure that can hold all the fields that we want to display and then use that new structure to create an internal table that you can pass to the display form we made earlier.
       </details>
-- Solution \
-
+- Solution 
     <details>
     <summary> Show solution </summary>
     Let's start by creating our new structure
