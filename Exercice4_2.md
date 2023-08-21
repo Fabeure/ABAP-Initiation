@@ -14,6 +14,7 @@
 - Solution 
     <details>
     <summary> Show solution </summary>
+    
     Let's start by creating our new structure
     We're going to call it **ZTLISTE_SALARIES_FULL**
 
