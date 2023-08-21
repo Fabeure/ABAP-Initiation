@@ -7,6 +7,7 @@ Now that we have selected our entires based on different criteria, it's time to 
 - Problem  
 
  Create an ALV report to diisplay data fetched from the previous exercices. 
+ ![Display](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Display.png?raw=true)
 
    - Hints 
         <details>
