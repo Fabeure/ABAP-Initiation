@@ -28,7 +28,6 @@ Add a **Hotspot** to the **Company Name** field
         MODIFY GT_FCAT1 FROM GS_FCAT1 TRANSPORTING HOTSPOT WHERE FIELDNAME = 'BUTXT'.
     ENDLOOP.
     ```
-    </details>
 
     Our **Company Name** column should now be clickable
 
@@ -83,6 +82,7 @@ Add a **Hotspot** to the **Company Name** field
 
   ![Clicked](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Clicked.png?raw=true)
 
+    </details>
 
 
 
