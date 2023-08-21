@@ -28,5 +28,12 @@
   Now if we run our program again, we should be able to see our entire internal table without having to scroll
 
   ![No_Scroll](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/No_Scroll.png?raw=true)
+  
+
+  You're free to explore and find new ways to change the layout of our ALV report
+
+  
+
+
 
     </details>
