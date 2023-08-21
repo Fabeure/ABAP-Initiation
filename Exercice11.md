@@ -1,4 +1,4 @@
-### Exercice 12 : Selection Screen Enhancement
+### Exercice 12 - Selection Screen Enhancement
 
 - Context
 
@@ -66,5 +66,8 @@
     ```
 
     This is now the result of our new selection screen
-    
+
+    Selection_Screen_Move
+
+    ![Selection_Screen_Move](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Screen_Move.gif?raw=true)
 

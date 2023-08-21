@@ -63,7 +63,7 @@
 
      - Objectives
 
-   - **Exercise 8 – Hotspot**
+   - [**Exercise 8 – Hotspot**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice8.md)
 
      - Objectives
 
@@ -83,7 +83,7 @@
      - Objectives
      - Useful Information
 
-   - **Exercise 12 - Writing a File**
+   - [**Exercise 12 - Writing a File**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice12.md)
 
      - Objectives
 
