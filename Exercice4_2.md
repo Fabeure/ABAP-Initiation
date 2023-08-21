@@ -12,6 +12,9 @@
        * Create a new structure that can hold all the fields that we want to display and then use that new structure to create an internal table that you can pass to the display form we made earlier.
       </details>
 - Solution \
+
+    <details>
+    <summary> Show solution </summary>
     Let's start by creating our new structure
     We're going to call it **ZTLISTE_SALARIES_FULL**
 
@@ -177,5 +180,7 @@
 
 
     ![Full_Report](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Full_Report.png?raw=true)
+
+    </details>
 
 
