@@ -17,6 +17,9 @@
 
 - Solution
 
+    <details>
+    <summary>Show solution</summary>
+
     Let's start off by making a selection screen **box** that will contain all our radio buttons that control the selection parameters
 
     Let's this piece of code in our main program (don't forget to remove the **SELECT OPTIONS** portion of our code)
@@ -70,4 +73,6 @@
     Selection_Screen_Move
 
     ![Selection_Screen_Move](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Selection_Screen_Move.gif?raw=true)
+
+    </details>
 
