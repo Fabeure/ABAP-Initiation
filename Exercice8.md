@@ -58,7 +58,7 @@ Add a **Hotspot** to the **Company Name** field
   ```abap
     *----------------------------------
     * Event Handler Class implimentation
-    *
+    *-----------------------------------
     CLASS LCL_EVENT_HANDLER IMPLEMENTATION.
 
     METHOD HANDLE_HOTSPOT_CLICK.
