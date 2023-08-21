@@ -41,6 +41,12 @@
      - Problem
      - Solution
 
+   - [**Exercise 4.5 – Displaying More Information**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice4.5.md)
+
+     - Context
+     - Problem
+     - Solution
+
    - [**Exercise 5 - Data Edition**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice5.md)
 
      - Context
