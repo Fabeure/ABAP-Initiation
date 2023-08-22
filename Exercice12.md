@@ -10,7 +10,7 @@
     - Hints 
         <details>
         <summary>Show hints</summary>
-        
+
        * Use the **GUI_DOWNLOAD** function module and the **FILE_SAVE_DIALOG** method of the **CL_GUI_FRONTEND_SERVICES** class to save your ALV report to your local machine. 
         </details>
 
@@ -49,17 +49,17 @@
 
 
     " get selected rows and append them to internal table that will be downloaded
-    CALL METHOD GRID0100->GET_SELECTED_ROWS
+    CALL METHOD GV_GRID001->GET_SELECTED_ROWS
         IMPORTING
         ET_INDEX_ROWS = I_SELECTED_ROWS.
     LOOP AT I_SELECTED_ROWS INTO W_SELECTED_ROWS.
-        READ TABLE WS_LISTE_SALARIES_FULL INTO WA INDEX W_SELECTED_ROWS.
+        READ TABLE WT_LISTE_SALARIES_FULL INTO WA INDEX W_SELECTED_ROWS.
         APPEND WA TO IT_DOWNLOADABLE.
     ENDLOOP.
 
     " if no rows are selected, append every row to IT_DOWNLOADABLE
     IF IT_DOWNLOADABLE IS INITIAL.
-        IT_DOWNLOADABLE[] = WS_LISTE_SALARIES_FULL[].
+        IT_DOWNLOADABLE[] = WT_LISTE_SALARIES_FULL[].
     ENDIF.
     ENDFORM.
     ```

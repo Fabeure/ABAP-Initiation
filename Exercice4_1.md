@@ -176,8 +176,8 @@ Now that we have selected our entires based on different criteria, it's time to 
 
     Let's declare a few class instances that we will need 
     ```abap
-      DATA : CONTAINER001 TYPE REF TO CL_GUI_CUSTOM_CONTAINER,
-             GRID001      TYPE REF TO CL_GUI_ALV_GRID.
+      DATA : GV_CONTAINER001 TYPE REF TO CL_GUI_CUSTOM_CONTAINER,
+             GV_GRID001      TYPE REF TO CL_GUI_ALV_GRID.
     ```  
     Let's now link our container and grid using the classes **cl_gui_custom_container** and **cl_gui_alv_grid**
 
@@ -196,14 +196,14 @@ Now that we have selected our entires based on different criteria, it's time to 
       SET PF-STATUS 'STATUS001'.
       SET TITLEBAR 'SCREEN001'.
 
-      IF CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
-       CREATE OBJECT CONTAINER001
+      IF GV_CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
+       CREATE OBJECT GV_CONTAINER001
        EXPORTING
        CONTAINER_NAME = 'CONTAINER001'.
 
-       CREATE OBJECT GRID001
+       CREATE OBJECT GV_GRID001
        EXPORTING
-       I_PARENT = CONTAINER001.
+       I_PARENT = GV_CONTAINER001.
        ENDIF.
 
       ENDMODULE.
@@ -259,7 +259,7 @@ Now that we have selected our entires based on different criteria, it's time to 
 
 
             " display alv report
-            CALL METHOD GRID001->SET_TABLE_FOR_FIRST_DISPLAY
+            CALL METHOD GV_GRID001->SET_TABLE_FOR_FIRST_DISPLAY
             EXPORTING
             *     I_BUFFER_ACTIVE               =
             *     I_BYPASSING_BUFFER            =

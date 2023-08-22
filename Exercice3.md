@@ -51,10 +51,10 @@ Create different include files to store significant chunks of your code.
   *& <--  p2        text
   *&---------------------------------------------------------------------*
   FORM SELECT_SALARIES.
-    CLEAR WT_LISTE_SALARIES[].
+    CLEAR IT_SALARIES.
     SELECT *
       FROM ZEXOSALARIES
-      INTO TABLE WT_LISTE_SALARIES
+      INTO TABLE IT_SALARIES
       WHERE ID_SAL IN S_IDSAL
         AND NOM_SALARIES IN S_NOMSAL
         AND PRENOM_SALARIES IN S_PSAL
@@ -74,7 +74,7 @@ Create different include files to store significant chunks of your code.
   *& <--  p2        text
   *&---------------------------------------------------------------------*
   FORM SORT_SALARIES_BY.
-    SORT WT_LISTE_SALARIES BY ID_SAL ASCENDING.
+    SORT IT_SALARIES BY ID_SAL ASCENDING.
   ENDFORM.
 
   *&---------------------------------------------------------------------*
@@ -86,12 +86,12 @@ Create different include files to store significant chunks of your code.
   *& <--  p2        text
   *&---------------------------------------------------------------------*
   FORM SELECT_SOCIETES.
-    IF WT_LISTE_SALARIES[] IS NOT INITIAL.
+    IF IT_SALARIES[] IS NOT INITIAL.
       SELECT *
         FROM T001
-        INTO TABLE WT_SOCIETES
-        FOR ALL ENTRIES IN WT_LISTE_SALARIES
-        WHERE BUKRS = WT_LISTE_SALARIES-SOCIETE.
+        INTO TABLE IT_SOCIETE
+        FOR ALL ENTRIES IN IT_SALARIES
+        WHERE BUKRS = WA_SALARIES-SOCIETE.
       IF SY-SUBRC = 0.
         SORT WT_SOCIETES BY BUKRS.
         "ELSE.
@@ -109,14 +109,14 @@ Create different include files to store significant chunks of your code.
   *& <--  p2        text
   *&---------------------------------------------------------------------*
   "FORM WRITE_SALARIES.
-    LOOP AT WT_LISTE_SALARIES INTO WS_LINE_SALARIES.
-      CLEAR WS_LINE_SOCIETES.
-      READ  TABLE WT_SOCIETES INTO WS_LINE_SOCIETES WITH KEY BUKRS = WS_LINE_SALARIES-SOCIETE.
-      WRITE WS_LINE_SALARIES-NOM_SALARIES.
-      WRITE WS_LINE_SALARIES-PRENOM_SALARIES.
-      WRITE WS_LINE_SALARIES-ADRES_MAIL_SALARIES.
-      WRITE WS_LINE_SOCIETES-BUKRS.
-      WRITE WS_LINE_SOCIETES-BUTXT.
+    LOOP AT IT_SALARIES INTO WA_SALARIES.
+      CLEAR WA_SOCIETES.
+      READ  TABLE IT_SOCIETE INTO WA_SOCIETE WITH KEY BUKRS = WA_SALARIES-SOCIETE.
+      WRITE WA_SALARIES-NOM_SALARIES.
+      WRITE WA_SALARIES-PRENOM_SALARIES.
+      WRITE WA_SALARIES-ADRES_MAIL_SALARIES.
+      WRITE WA_SOCIETES-BUKRS.
+      WRITE WA_SOCIETES-BUTXT.
       WRITE :/.
     ENDLOOP.
   ENDFORM.

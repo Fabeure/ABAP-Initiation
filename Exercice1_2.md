@@ -36,30 +36,30 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
   ```abap
   "use a DATA clause to declare data.
   DATA :   s_idsal TYPE ZEXOSALARIES-ID_SAL
-           WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
-           wa_salaries TYPE ZEXOSALARIES.
+           IT_SALARIES TYPE TABLE OF ZEXOSALARIES,
+           WA_SALARIES TYPE ZEXOSALARIES.
 
 
 
-  " we can select all entries from the ZEXOSALARIES table using the selection parametre S_IDSAL into our internal table WT_LISTE_SALARIES
+  " we can select all entries from the ZEXOSALARIES table using the selection parametre S_IDSAL into our internal table IT_SALARIES
   Select *
   from ZEXOSALARIES
-  into table WT_LISTE_SALARIES
+  into table IT_SALARIES
   where ID_SAL in S_IDSAL.
 
 
 
   " now we can loop over our internal table row by row and write the output to the standard output.
-  LOOP AT WT_LISTE_SALARIES into wa_salaries.
-    WRITE wa_salaries-ID_SAL.
-    WRITE wa_salaries-NOM_SALARIES.
+  LOOP AT IT_SALARIES into WA_SALARIES.
+    WRITE WA_SALARIES-ID_SAL.
+    WRITE WA_SALARIES-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
   ENDLOOP.
 
   ```
-  Internal tables are basically an image of your database table that exist only in runtime (when executing your program). These internal tables are used to fetch data from the database into your program. 
+  Internal tables are basically a temporary local storage of your database table that exist only during runtime (when executing your program). These internal tables are used to fetch data from the database into your program so you can manipulate that data.
 
-  Working areas are like the "rows" of the internal table. 
+  Working areas are like the "rows" of an internal table. 
 
   For more information on Data declarations, refer to:
     - [ABAP Cheat Sheet - Internal Tables](https://github.com/SAP-samples/abap-cheat-sheets/blob/main/01_Internal_Tables.md)
@@ -75,22 +75,22 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   ```abap
   DATA :   s_idsal TYPE ZEXOSALARIES-ID_SAL
-           WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
-           wa_salaries TYPE ZEXOSALARIES.
+           IT_SALARIES TYPE TABLE OF ZEXOSALARIES,
+           WA_SALARIES TYPE ZEXOSALARIES.
 
   SELECT-OPTIONS :
      s_id for s_idsal.
 
   Select *
   from ZEXOSALARIES
-  into table WT_LISTE_SALARIES
+  into table IT_SALARIES
   where ID_SAL in S_IDSAL.
 
   
 
-  LOOP AT WT_LISTE_SALARIES into wa_salaries.
-    WRITE wa_salaries-ID_SAL.
-    WRITE wa_salaries-NOM_SALARIES.
+  LOOP AT IT_SALARIES into WA_SALARIES.
+    WRITE WA_SALARIES-ID_SAL.
+    WRITE WA_SALARIES-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
   ENDLOOP.
 
@@ -124,8 +124,8 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
           s_nomsal TYPE ZEXOSALARIES-NOM_SALARIES,
           s_prenomsal TYPE ZEXOSALARIES-PRENOM_SALARIES,
           s_datnaissancesal TYPE ZEXOSALARIES-DATE_DE_NAISSANCE,
-          WT_LISTE_SALARIES TYPE TABLE OF ZEXOSALARIES,
-          wa_salaries TYPE ZEXOSALARIES.
+          IT_SALARIES TYPE TABLE OF ZEXOSALARIES,
+          WA_SALARIES TYPE ZEXOSALARIES.
 
   SELECT-OPTIONS :
      s_id for s_idsal,
@@ -136,7 +136,7 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   Select *
   from ZEXOSALARIES
-  into table WT_LISTE_SALARIES
+  into table IT_SALARIES
   where ID_SAL IN S_ID
   AND NOM_SALARIES IN S_NOM
   AND PRENOM_SALARIES IN S_PRENOM
@@ -144,9 +144,9 @@ Using the **ZEXOSALARIES** database table, allow the user to select employees us
 
   
 
-  LOOP AT WT_LISTE_SALARIES into wa_salaries.
-    WRITE wa_salaries-ID_SAL.
-    WRITE wa_salaries-NOM_SALARIES.
+  LOOP AT IT_SALARIES into WA_SALARIES.
+    WRITE WA_SALARIES-ID_SAL.
+    WRITE WA_SALARIES-NOM_SALARIES.
     WRITE /. "breakline to make result more readable
   ENDLOOP.
  

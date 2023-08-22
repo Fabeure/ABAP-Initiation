@@ -24,24 +24,24 @@
 
 
     ```abap
-        DATA: WS_LISTE_SALARIES_FULL TYPE TABLE OF ZTLISTE_SALARIES_FULL,
-              LS_SALARIES_FULL       TYPE ZTLISTE_SALARIES_FULL.
+        DATA: WT_LISTE_SALARIES_FULL TYPE TABLE OF ZTLISTE_SALARIES_FULL,
+              LS_LISTE_SALARIES_FULL       TYPE ZTLISTE_SALARIES_FULL.
     ```
 
-    Let's make a form responsible for filling our **WS_LISTE_SALARIES_FULL** internal table :
+    Let's make a form responsible for filling our **WT_LISTE_SALARIES_FULL** internal table :
 
     ```abap
         *&---------------------------------------------------------------------*
         *& Form fill_full
         *&---------------------------------------------------------------------*
-        *& populate wt_liste_salaries_full with data from both wt_liste_salaries
-        *& and wt_societes
+        *& populate wt_liste_salaries_full with data from both it_salaries
+        *& and it_societe
         *&---------------------------------------------------------------------*
         *& -->  p1        text
         *& <--  p2        text
         *&---------------------------------------------------------------------*
         FORM FILL_FULL.
-        CLEAR WS_LISTE_SALARIES_FULL.
+        CLEAR WT_LISTE_SALARIES_FULL.
         DATA : LV_BUTXT TYPE T001-BUTXT,
                 DAYS     TYPE NUM2,
                 MONTHS   TYPE NUM2,
@@ -50,15 +50,15 @@
         LOOP AT IT_SALARIES INTO DATA(LS_SALARIES).
             CLEAR LS_SALARIES_FULL.
 
-            LS_SALARIES_FULL-ID_SAL = LS_SALARIES-ID_SAL.
-            LS_SALARIES_FULL-PRENOM_SALARIES = LS_SALARIES-PRENOM_SALARIES.
-            LS_SALARIES_FULL-ADRES_MAIL_SALARIES = LS_SALARIES-ADRES_MAIL_SALARIES.
-            LS_SALARIES_FULL-SOCIETE = LS_SALARIES-SOCIETE.
-            LS_SALARIES_FULL-DATE_DE_NAISSANCE = LS_SALARIES-DATE_DE_NAISSANCE.
-            LS_SALARIES_FULL-VILLE = LS_SALARIES-VILLE.
-            LS_SALARIES_FULL-POSTAL = LS_SALARIES-POSTAL.
-            LS_SALARIES_FULL-ADRESSE = LS_SALARIES-ADRESSE.
-            LS_SALARIES_FULL-NOM_SALARIES = LS_SALARIES-NOM_SALARIES.
+            LS_LISTE_SALARIES_FULL-ID_SAL = LS_LISTE_SALARIES-ID_SAL.
+            LS_LISTE_SALARIES_FULL-PRENOM_SALARIES = LS_LISTE_SALARIES-PRENOM_SALARIES.
+            LS_LISTE_SALARIES_FULL-ADRES_MAIL_SALARIES = LS_LISTE_SALARIES-ADRES_MAIL_SALARIES.
+            LS_LISTE_SALARIES_FULL-SOCIETE = LS_LISTE_SALARIES-SOCIETE.
+            LS_LISTE_SALARIES_FULL-DATE_DE_NAISSANCE = LS_LISTE_SALARIES-DATE_DE_NAISSANCE.
+            LS_LISTE_SALARIES_FULL-VILLE = LS_LISTE_SALARIES-VILLE.
+            LS_LISTE_SALARIES_FULL-POSTAL = LS_LISTE_SALARIES-POSTAL.
+            LS_LISTE_SALARIES_FULL-ADRESSE = LS_LISTE_SALARIES-ADRESSE.
+            LS_LISTE_SALARIES_FULL-NOM_SALARIES = LS_LISTE_SALARIES-NOM_SALARIES.
 
             CALL FUNCTION 'HRCM_TIME_PERIOD_CALCULATE'
             EXPORTING
@@ -74,15 +74,15 @@
                 OTHERS        = 3.
 
 
-            LS_SALARIES_FULL-AGE = YEARS.
+            LS_LISTE_SALARIES_FULL-AGE = YEARS.
 
             READ TABLE IT_SOCIETE INTO DATA(LS_SOCIETES) WITH KEY BUKRS = LS_SALARIES-SOCIETE.
             IF SY-SUBRC = 0.
             LV_BUTXT = LS_SOCIETES-BUTXT.
-            LS_SALARIES_FULL-BUTXT = LV_BUTXT.
+            LS_LISTE_SALARIES_FULL-BUTXT = LV_BUTXT.
             ENDIF.
 
-            APPEND LS_SALARIES_FULL TO WS_LISTE_SALARIES_FULL.
+            APPEND LS_LISTE_SALARIES_FULL TO WT_LISTE_SALARIES_FULL.
         ENDLOOP.
         ENDFORM.
     ```
@@ -94,7 +94,7 @@
     *& Form display_data
     *&---------------------------------------------------------------------*
     *& populate internal tables from ZEXOSALARIES and T001
-    *& display alv usign LVC_FIELDCATALOG_MERGE and GRID0100->SET_TABLE_FOR_FIRST_DISPLAY
+    *& display alv usign LVC_FIELDCATALOG_MERGE and GV_GRID001->SET_TABLE_FOR_FIRST_DISPLAY
     *& CTRL+F6 to get function template
     *&---------------------------------------------------------------------*
     *& -->  p1        text *& <--  p2        text
@@ -125,7 +125,7 @@
                     CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
                     EXPORTING
                         I_STRUCTURE_NAME = 'ZTLISTE_SALARIES_FULL'
-                        I_INTERNAL_TABNAME     = 'WS_LISTE_SALARIES_FULL'
+                        I_INTERNAL_TABNAME     = 'WT_LISTE_SALARIES_FULL'
                     CHANGING
                         CT_FIELDCAT            = GT_FCAT1
                     EXCEPTIONS
@@ -149,7 +149,7 @@
 
                 GS_LAYOUT1-CWIDTH_OPT = 'X'.
                     " display alv report
-                    CALL METHOD GRID001->SET_TABLE_FOR_FIRST_DISPLAY
+                    CALL METHOD GV_GRID001->SET_TABLE_FOR_FIRST_DISPLAY
                     EXPORTING
 
                         I_SAVE                        = 'A'
@@ -157,7 +157,7 @@
                         IT_TOOLBAR_EXCLUDING          = LT_EXCLUDE_FUNCTIONS
 
                     CHANGING
-                        IT_OUTTAB                     = WS_LISTE_SALARIES_FULL
+                        IT_OUTTAB                     = WT_LISTE_SALARIES_FULL
                         IT_FIELDCATALOG               = GT_FCAT1
 
                     EXCEPTIONS
@@ -169,7 +169,7 @@
 
                     ENDIF.
                     " register edit events on grid to propagate to internal table
-            CALL METHOD GRID001->REGISTER_EDIT_EVENT
+            CALL METHOD GV_GRID001->REGISTER_EDIT_EVENT
                 EXPORTING
                 I_EVENT_ID = CL_GUI_ALV_GRID=>MC_EVT_MODIFIED.
 

@@ -44,7 +44,7 @@
 
     ```abap
         " register edit events on grid to propagate to internal table
-    CALL METHOD GRID001->REGISTER_EDIT_EVENT
+    CALL METHOD GV_GRID001->REGISTER_EDIT_EVENT
      EXPORTING
       I_EVENT_ID = CL_GUI_ALV_GRID=>MC_EVT_MODIFIED.
     ```
@@ -66,12 +66,13 @@
         *&---------------------------------------------------------------------*
         FORM UPDATE.
 
-        FIELD-SYMBOLS: <FS_DATA> LIKE LINE OF IT_SALARIES.
+          
+          FIELD-SYMBOLS <fs_data> LIKE LINE OF wt_liste_salaries_full.
 
-        LOOP AT IT_SALARIES ASSIGNING <FS_DATA>.
-            MOVE-CORRESPONDING <FS_DATA> TO WA_SALARIES.
-            MODIFY ZEXOSALARIES FROM WA_SALARIES.
-        ENDLOOP.
+          LOOP AT wt_liste_salaries_full ASSIGNING <fs_data>.
+            MOVE-CORRESPONDING <fs_data> TO ls_liste_salaries_full.
+            MODIFY zexosalaries FROM ls_liste_salaries_full.
+          ENDLOOP.
 
 
         ENDFORM.
@@ -95,7 +96,7 @@
       APPEND CL_GUI_ALV_GRID=>MC_FC_LOC_PASTE_NEW_ROW TO LT_EXCLUDE_FUNCTIONS.
 
       " display alv report
-            CALL METHOD GRID001->SET_TABLE_FOR_FIRST_DISPLAY
+            CALL METHOD GV_GRID001->SET_TABLE_FOR_FIRST_DISPLAY
             EXPORTING
             *     I_BUFFER_ACTIVE               =
             *     I_BYPASSING_BUFFER            =
@@ -113,7 +114,7 @@
             *     IT_EXCEPT_QINFO               =
             *     IR_SALV_ADAPTER               =
             CHANGING
-                  IT_OUTTAB                     = it_salaries
+                  IT_OUTTAB                     = wt_liste_salaries_full
                   IT_FIELDCATALOG               = GT_FCAT1
             *     IT_SORT                       =
             *     IT_FILTER                     =
@@ -172,8 +173,8 @@
 
     ```abap
       DATA : I_SELECTED_ROWS TYPE LVC_T_ROW,
-        W_SELECTED_ROWS TYPE  LVC_S_ROW,
-        WA              TYPE ZTLISTE_SALARIES_FULL.
+             W_SELECTED_ROWS TYPE  LVC_S_ROW,
+             WA TYPE ZTLISTE_SALARIES_FULL.
     ```
 
     Next, let's code the logic for our ADD_ROW and REMOVE_ROW forms:
@@ -189,10 +190,10 @@
     *& <--  p2        text
     *&---------------------------------------------------------------------*
     FORM ADD_ROW.
-      DATA : WA_NEW_ROW     TYPE ZEXOSALARIES,
-            LV_MAX_ID      TYPE ZEXOSALARIES-ID_SAL,
-            LV_MAX_ID_INT  TYPE INT8,
-            LV_MAX_ID_CHAR TYPE CHAR30.
+      DATA : WA_NEW_ROW     TYPE ztliste_salaries_full,
+             LV_MAX_ID      TYPE ztliste_salaries_full-ID_SAL,
+             LV_MAX_ID_INT  TYPE INT8,
+             LV_MAX_ID_CHAR TYPE CHAR30.
 
       SELECT MAX( ID_SAL ) INTO LV_MAX_ID FROM ZEXOSALARIES.
 
@@ -202,8 +203,7 @@
 
       LV_MAX_ID_CHAR = |{ LV_MAX_ID_INT }|.
       WA_NEW_ROW-ID_SAL = LV_MAX_ID_CHAR.
-      WA_NEW_ROW-DATE_DE_NAISSANCE = SY-DATUM.
-      APPEND WA_NEW_ROW TO IT_SALARIES.
+      APPEND WA_NEW_ROW TO wa_liste_salaries_full.
 
     ENDFORM.
 
@@ -221,12 +221,12 @@
       DATA: WA_SELECTED_ROW TYPE SY-TABIX,
             WA_MODIFIED     TYPE ZEXOSALARIES.
 
-      CALL METHOD GRID001->GET_SELECTED_ROWS
+      CALL METHOD GV_GRID001->GET_SELECTED_ROWS
         IMPORTING
           ET_INDEX_ROWS = I_SELECTED_ROWS.
 
       LOOP AT I_SELECTED_ROWS INTO WA_SELECTED_ROW.
-        READ TABLE IT_SALARIES INTO WA INDEX WA_SELECTED_ROW.
+        READ TABLE wt_liste_salaries_full INTO WA INDEX WA_SELECTED_ROW.
         MOVE-CORRESPONDING WA TO WA_MODIFIED.
 
       DELETE FROM ZEXOSALARIES WHERE ID_SAL = WA_MODIFIED-ID_SAL.
@@ -252,11 +252,13 @@
     *&---------------------------------------------------------------------*
     FORM REFRESH.
 
-      IF NOT sy-ucomm = 'ADD'. // This is here to prevent performing a refresh before adding our new entry to the database table.
+      IF NOT sy-ucomm = 'ADD'.  " This is here to prevent performing a refresh before adding our new entry to the database table.
+
       PERFORM SELECT_SALARIES.
       PERFORM SELECT_SOCIETES.
+      PERFORM FILL FULL.
       ENDIF.
-      CALL METHOD GRID001->REFRESH_TABLE_DISPLAY.
+      CALL METHOD GV_GRID001->REFRESH_TABLE_DISPLAY.
     ENDFORM.
     ```
 
@@ -267,14 +269,14 @@
     SET PF-STATUS 'STATUS001'.
     SET TITLEBAR 'SCREEN001'.
 
-      IF CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
-      CREATE OBJECT CONTAINER001
+      IF GV_CONTAINER001 IS INITIAL. " we add this condition to only create the container and grid once.
+      CREATE OBJECT GV_CONTAINER001
       EXPORTING
       CONTAINER_NAME = 'CONTAINER001'.
 
-      CREATE OBJECT GRID001
+      CREATE OBJECT GV_GRID001
       EXPORTING
-      I_PARENT = CONTAINER001.
+      I_PARENT = GV_CONTAINER001.
       PERFORM DISPLAY_DATA.
       ENDIF.
 
