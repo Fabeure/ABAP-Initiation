@@ -10,6 +10,7 @@
     - Hints 
         <details>
         <summary>Show hints</summary>
+        
        * Use the **GUI_DOWNLOAD** function module and the **FILE_SAVE_DIALOG** method of the **CL_GUI_FRONTEND_SERVICES** class to save your ALV report to your local machine. 
         </details>
 
