@@ -1,17 +1,22 @@
 ### Exercise 12 - Writing a File
 
-- Context 
-
-We now want to be able to save our ALV report to our local machine in different formats.
+- Context \
+    We now want to be able to save our ALV report to our local machine in different formats.
 
 - Problem 
 
-Save the ALV report as a **CSV** file on your local machine
-    - Hints
+    Save the ALV report as a **CSV** file on your local machine
+
+    - Hints 
         <details>
         <summary>Show hints</summary>
-        * Use the **GUI_DOWNLOAD** function module and the **FILE_SAVE_DIALOG** method of the **CL_GUI_FRONTEND_SERVICES** class to save your ALV report to your local machine. 
+       * Use the **GUI_DOWNLOAD** function module and the **FILE_SAVE_DIALOG** method of the **CL_GUI_FRONTEND_SERVICES** class to save your ALV report to your local machine. 
         </details>
+
+
+ 
+        
+        
 
 - Solution
     <details>
