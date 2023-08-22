@@ -94,8 +94,15 @@ Save the ALV report as a **CSV** file on your local machine
     *         WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
     ENDIF.
     ```
+    We can now select rows and choose where to save them on our local storage
+
+
+    ![Save](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Save.png?raw=true)
+
+    ![CSV](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/CSV.png?raw=true)
 
     
+
     </details>
 
 
