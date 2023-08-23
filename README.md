@@ -61,33 +61,33 @@
 
    - [**Exercise 7 - Formatting**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice7.md)
 
-     - Objectives
+     - Context
+     - Problem
+     - Solution
 
    - [**Exercise 8 – Hotspot**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice8.md)
 
-     - Objectives
+     - Context
+     - Problem
+     - Solution
 
-   - **Exercise 9 - PDF Printing**
 
-     - Objectives
-     - Useful Information
-     - Links
+   - [**Exercise 9 - Selection Screen Enhancement**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice9.md)
 
-   - **Exercise 10 - Sending PDF Document by Email**
+     - Context
+     - Problem
+     - Solution
 
-     - Objectives
-     - Useful Information
+   - [**Exercise 10 - Writing a File**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice10.md)
 
-   - [**Exercise 11 - Selection Screen Enhancement**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice11.md)
+     - Context
+     - Problem
+     - Solution
 
-     - Objectives
-     - Useful Information
-
-   - [**Exercise 12 - Writing a File**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice12.md)
-
-     - Objectives
-
-   - **Exercise 13 - Extended Program Control**
+   - [**Exercise 11 - Extended Program Control**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice11.md)
+     - Context
+     - Problem
+     - Solution
 
 4. **Glossary**
 
