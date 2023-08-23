@@ -84,7 +84,14 @@
      - Problem
      - Solution
 
-   - [**Exercise 11 - Extended Program Control**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Exercice11.md)
+   
+
+   - [**Exercise 11 - Extended Program Control**]()
+     - Context
+     - Problem
+     - Solution
+
+   - [**Exercise 12 - BadI's**]()
      - Context
      - Problem
      - Solution
