@@ -14,7 +14,9 @@
 
     For our example, we will use the transaction **MM01**. This transaction is used to create materials. We will use a BAdI to implement additional logic to this standard sap functionality.
 
-    More specifically, we will make sure that when choosing to create a mateiral of the **Beverage Industry** of type **Beverages**, a "default" description and unit of measurement will be set. 
+    More specifically, we will make sure that when choosing to create a mateiral of the **Beverage Industry** of type **Beverages**, a "default" description and unit of measurement will be set.
+
+  tfygh
 
     
 
