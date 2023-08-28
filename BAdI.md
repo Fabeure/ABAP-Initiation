@@ -71,8 +71,16 @@
     We can now add our logic that will execute when saving any modifications to the address
 
     ```abap
+        method IF_EX_ADDR_PRINTFORM_SHORT~ADDR_PRINTFORM_SHORT.
 
+            if DESTINATION_COUNTRY_TEXT-LAND1 = 'TN' and RECEIVER_LANGUAGE <> 'F'.
+            MESSAGE 'Language doit etre en francais' TYPE 'I'.
+
+            ENDIF.
+        endmethod.
     ```
+
+    we now run a check to make sure the **RECEIVER_LANGUAGE** field is correctly set.
 
 
     
