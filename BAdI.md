@@ -10,11 +10,67 @@
 
 - Solution
 
-    The first step of implementing a BAdI is choosing the transaction that best fits the need for a BAdI.
+    <details>
+    <summary> Show solution </summary>
 
-    For our example, we will use the transaction **MM01**. This transaction is used to create materials. We will use a BAdI to implement additional logic to this standard sap functionality.
+    The first step of implementing a BAdI is choosing a transaction that best fits the need for a BAdI.
 
-    More specifically, we will make sure that when choosing to create a mateiral of the **Beverage Industry** of type **Beverages**, a "default" description and unit of measurement will be set. 
+    For our example, we will use the transaction **XK02**. This transaction is used to modify supplier data. We will use a BAdI to implement additional logic to this standard sap functionality.
+
+    More specifically, we will make sure that when choosing to modify a vendor, we will run a few checks on the address to make sure it is coherent.
+
+    The first step is to find the BAdI that best fits our needs. To do this, let's head over to the **SE24** transaction and find the **CL_EXITHANDLER**. This class will gives us a list of all the BAdIs that are called when executing a transaction.
+
+    After displayuing the **CL_EXITHANDLER** class, lets display the **GET_INSTANCE** method
+    
+    ![Get_Instance](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Get_Instance.png?raw=true)
+
+    Lets add a breakpoint to the **CALL METHOD cl_exithandler=>get_class_name_by_interface** method call
+
+    ![Break](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Break.png?raw=true)
+
+    Lets open the **XK02** transaction and see what happens 
+
+    ![Exit_Name](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Exit_Name.png?raw=true)
+
+    double clicking on the **exit_name** variable will allow us to get a list of the BAdIs being called 
+
+    ![Name](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Name.png?raw=true)
+
+    We can already see that we get a call for a BAdI named **BUPA_ADDR_CHECK**
+
+    > **_NOTE:_**  Pressing F8 and executing the code further will give you the rest of the BAdIs that are called. Multiple different BAdIs are usually called in a single transaction.
+
+    Now that we have the BAdI name, let's make sure this is the BAdI that actually has access to the values we want to modify.
+
+    We can do this by heading over to the **SE18** transaction, entering the BAdI name and investigating what variables are passed
+
+    ![BAdI](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/BAdI.png?raw=true)
+
+    Heading over to the **Interface** tab and looking at the methods provided, we can find a handy method called **CHECK**
+
+    ![Input](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Input.png?raw=true)
+
+
+    > **_NOTE:_**  Sometimes the interface names in a BAdI are not very descriptif of it's actual functionality, so to be certain of what a method in a BAdI does, you can double click on the interface name to see the input and output parameters of a particular method. These will give you a clear idea of what that method does.
+    ![Parametres](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Parametres.png?raw=true)
+
+
+    Now that we have found the appropriate BAdI interface, we can add our custom implementation as follows
+
+    ![Implement](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Implement.png?raw=true)
+
+    ![Create_Implementation](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Create_Implementation.png?raw=true)
+
+
+    We can now choose the interface method we want to implement.
+
+    ![Method](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Method.png?raw=true)
+
+    
+
+
+    </details>
 
     
 
