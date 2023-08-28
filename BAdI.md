@@ -37,7 +37,7 @@
 
     ![Name](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Name.png?raw=true)
 
-    We can already see that we get a call for a BAdI named **BUPA_ADDR_CHECK**
+    We can already see that we get a call for a BAdI named **ADDR_PRINTFORM_SHORT**
 
     > **_NOTE:_**  Pressing F8 and executing the code further will give you the rest of the BAdIs that are called. Multiple different BAdIs are usually called in a single transaction.
 
@@ -47,7 +47,7 @@
 
     ![BAdI](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/BAdI.png?raw=true)
 
-    Heading over to the **Interface** tab and looking at the methods provided, we can find a handy method called **CHECK**
+    Heading over to the **Interface** tab and looking at the methods provided, we can find a handy method called **ADDR_PRINTFORM_SHORT**
 
     ![Input](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Input.png?raw=true)
 
@@ -71,7 +71,7 @@
     We can now add our logic that will execute when saving any modifications to the address
 
     ```abap
-    
+
     ```
 
 
