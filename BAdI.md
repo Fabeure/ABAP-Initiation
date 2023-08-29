@@ -73,14 +73,14 @@
     ```abap
         method IF_EX_ADDR_PRINTFORM_SHORT~ADDR_PRINTFORM_SHORT.
 
-            if DESTINATION_COUNTRY_TEXT-LAND1 = 'TN' and RECEIVER_LANGUAGE <> 'F'.
+            if DESTINATION_COUNTRY_TEXT-LAND1 = 'TN'.
             MESSAGE 'Language doit etre en francais' TYPE 'I'.
 
             ENDIF.
         endmethod.
     ```
 
-    we now run a check to make sure the **RECEIVER_LANGUAGE** field is correctly set.
+    When updating our address we now get information on the appropriate language. 
 
 
     
