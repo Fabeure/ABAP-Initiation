@@ -27,13 +27,16 @@
 
     - Hint
         <details>
-        <summary>Show hints</summary>
+        <summary> Show hints </summary>
 
         - Analyse the code and try understanding what the **predicted** result is, and then run it to see the actual result. 
 
         </details>
 
 - Solution
+
+    <details>
+    <summary> Show Solution </summary>
 
     Lets first run our code and see the result it gives us
 
@@ -77,6 +80,8 @@
     We can now fix the problem in different ways.
 
     The main takeaway here is that the debugger is a very powerful tool for understanding where code isn't working as expected, especially when a program doesn't dump but instead works but gives a wrong result.
+
+    </details>
 
 
     
