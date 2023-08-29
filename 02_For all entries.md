@@ -1,4 +1,3 @@
-
 ### Exercise 2 - For All Entries
 
 
