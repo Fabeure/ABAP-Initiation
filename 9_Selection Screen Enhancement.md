@@ -1,4 +1,4 @@
-### Exercice 12 - Selection Screen Enhancement
+### Exercice 9 - Selection Screen Enhancement
 
 - Context
 

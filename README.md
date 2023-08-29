@@ -5,48 +5,50 @@
 
 3. [**Exercices**](#exercices)
 
-   - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Program%20Creation.md)
+   - [**Exercise 1.1 – Program Creation**](https://github.com/Fabeure/ABAP-Initiation/blob/main/1.1_Program%20Creation.md)
    
      
 
-   - [**Exercise 1.2 – Selection Screen**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Selection%20Screen.md)
+   - [**Exercise 1.2 – Selection Screen**](https://github.com/Fabeure/ABAP-Initiation/blob/main/1.2_Selection%20Screen.md)
 
 
 
-   - [**Exercise 1.3 - Messages**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Messages.md)
+   - [**Exercise 1.3 - Messages**](https://github.com/Fabeure/ABAP-Initiation/blob/main/1.3_Messages.md)
+
+   - [**Exercise 1.4 - Debugger**](https://github.com/Fabeure/ABAP-Initiation/blob/main/1.4_Messages.md)
 
 
-   - [**Exercise 2 – For all entries**](https://github.com/Fabeure/ABAP-Initiation/blob/main/For%20all%20entries.md)
+   - [**Exercise 2 – For all entries**](https://github.com/Fabeure/ABAP-Initiation/blob/main/2_For%20all%20entries.md)
 
-   - [**Exercise 3 – Code Organization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Code%20Organization.md)
+   - [**Exercise 3 – Code Organization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/3_Code%20Organization.md)
 
-   - [**Exercise 4.1 – Display Optimization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Display%20Optimization.md)
+   - [**Exercise 4.1 – Display Optimization**](https://github.com/Fabeure/ABAP-Initiation/blob/main/4.1_Display%20Optimization.md)
 
   
 
-   - [**Exercise 4.2 – Displaying More Information**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Displaying%20More%20Information.md)
+   - [**Exercise 4.2 – Displaying More Information**](https://github.com/Fabeure/ABAP-Initiation/blob/main/4.2_Displaying%20More%20Information.md)
 
-   - [**Exercise 5 - Data Edition**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Data%20Edition.md)
-
-
-   - [**Exercise 6 - Sending An Email**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Sending%20An%20Email.md)
+   - [**Exercise 5 - Data Edition**](https://github.com/Fabeure/ABAP-Initiation/blob/main/5_Data%20Edition.md)
 
 
-   - [**Exercise 7 - Formatting**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Formatting.md)
+   - [**Exercise 6 - Sending An Email**](https://github.com/Fabeure/ABAP-Initiation/blob/main/6_Sending%20An%20Email.md)
 
 
-   - [**Exercise 8 – Hotspot**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Hotspot.md)
+   - [**Exercise 7 - Formatting**](https://github.com/Fabeure/ABAP-Initiation/blob/main/7_Formatting.md)
 
 
-   - [**Exercise 9 - Selection Screen Enhancement**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Selection%20Screen%20Enhancement.md)
-
-   - [**Exercise 10 - Writing a File**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Writing%20a%20File.md)
+   - [**Exercise 8 – Hotspot**](https://github.com/Fabeure/ABAP-Initiation/blob/main/8_Hotspot.md)
 
 
-   - [**Exercise 11 - Extended Program Control**](https://github.com/Fabeure/ABAP-Initiation/blob/main/Extended%20Program%20Control.md)
+   - [**Exercise 9 - Selection Screen Enhancement**](https://github.com/Fabeure/ABAP-Initiation/blob/main/9_Selection%20Screen%20Enhancement.md)
+
+   - [**Exercise 10 - Writing a File**](https://github.com/Fabeure/ABAP-Initiation/blob/main/10_Writing%20a%20File.md)
 
 
-   - [**Exercise 12 - BAdI**](https://github.com/Fabeure/ABAP-Initiation/blob/main/BAdI.md)
+   - [**Exercise 11 - Extended Program Control**](https://github.com/Fabeure/ABAP-Initiation/blob/main/11_Extended%20Program%20Control.md)
+
+
+   - [**Exercise 12 - BAdI**](https://github.com/Fabeure/ABAP-Initiation/blob/main/12_BAdI.md)
     
 
 4. **Glossary**

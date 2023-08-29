@@ -1,4 +1,4 @@
-### Exercise 12 - Writing a File
+### Exercise 10 - Writing a File
 
 - Context \
     We now want to be able to save our ALV report to our local machine in different formats.
