@@ -69,7 +69,7 @@
 
     Next, let's **step through** our code line by line and see what is happening
 
-    ![Step](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Step.png?raw=true)
+    ![Step](https://github.com/Fabeure/ABAP-Initiation/blob/main/Images/Step.gif?raw=true)
 
 
     We can now see that our **num2** variable reaches 0 and then we try divising by it.
