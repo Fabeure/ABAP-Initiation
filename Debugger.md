@@ -11,7 +11,18 @@
     Try fixing this piece of code using the debugger to find out where exactly the code breaks.
 
     ```abap
+    DATA: num1 TYPE i VALUE 10,
+        num2 TYPE i VALUE 5,
+        result TYPE i.
 
+    DO 5 TIMES.
+    num1 = num1 - 1.
+    num2 = num2 - 1.
+    ENDDO.
+
+    result = num1 / num2.
+
+    WRITE: 'Result:', result.
     ```
 
     - Hint
