@@ -51,19 +51,11 @@
    - [**Exercise 12 - BAdI**](https://github.com/Fabeure/ABAP-Initiation/blob/main/12_BAdI.md)
     
 
-4. **Glossary**
-
-   - Definitions of important terms used throughout the document.
-
-5. **SAP Instructions**
-
-   - Instructions on how to perform SAP-related tasks mentioned in the document.
-
-6. **Useful Transactions**
+**Useful Transactions**
 
    - List of SAP transactions that are useful for the exercises.
 
-7. **Useful Links**
+**Useful Links**
    - Additional resources or links for further learning and reference.
 
 
