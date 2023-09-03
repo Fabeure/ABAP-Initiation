@@ -1,4 +1,3 @@
-
 ### Exercise 2 - For All Entries
 
 
@@ -87,3 +86,5 @@
      Be careful when using FOR ALL ENTRIES in an empty internal table, as this will cause the system to select all entries in every database table which could cause a system crash or a memory overflow.
    🔴🔴🔴🔴🔴
   </details>
+
+  
